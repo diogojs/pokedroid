@@ -32,19 +32,27 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$v_kotlin"
     implementation "androidx.appcompat:appcompat:1.1.0"
-    implementation "androidx.constraintlayout:constraintlayout:$v_constraint_layout"
     implementation 'androidx.core:core-ktx:1.2.0-alpha04'
 
+    // Layout
+    implementation "androidx.constraintlayout:constraintlayout:$v_constraint_layout"
+    implementation "com.google.android:flexbox:1.1.0"
+
+    // Room
     implementation "androidx.room:room-runtime:$v_room"
-    kapt "androix.room:room-compiler:$v_room"
     implementation "androidx.room:room-ktx:$v_room"
     testImplementation "androidx.room:room-testing:$v_room"
 
-    implementation "androidx.lifecycle:lifecycle-extensions:$v_lifecycle_extensions"
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-extensions:$v_lifecycle"
+    kapt "androidx.lifecycle:lifecycle-compiler:$v_lifecycle"
+    testImplementation "androidx.arch.core:core-testing:$v_lifecycle"
 
+    // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$v_coroutine"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$v_coroutine"
 
+    // Navigation
     implementation "android.arch.navigation:navigation-ui-ktx:$v_navigation"
 
     testImplementation 'junit:junit:4.12'

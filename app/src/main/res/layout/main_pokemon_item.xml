@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="pokemon"
+            type="String" />
+        <variable
+            name="onClick"
+            type="kotlin.jvm.functions.Function1&lt;String, kotlin.Unit&gt;" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/card_width"
+        android:layout_height="@dimen/card_height"
+        android:onClick="@{() -> onClick.invoke(pokemon)}">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{pokemon}"/>
+    </androidx.cardview.widget.CardView>
+</layout>
